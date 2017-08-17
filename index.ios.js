@@ -11,11 +11,12 @@ try {
 
 var { StyleSheet } = require('react-native');
 
-var UnimplementedView = React.createClass({
-  setNativeProps: function() {
+class UnimplementedView extends React.Component {
+  setNativeProps = () => {
     // Do nothing.
-  },
-  render: function() {
+  };
+
+  render() {
     // Workaround require cycle from requireNativeComponent
     var { View } = require('react-native');
 
@@ -24,8 +25,8 @@ var UnimplementedView = React.createClass({
         {this.props.children}
       </View>
     );
-  },
-});
+  }
+}
 
 var styles = StyleSheet.create({
   unimplementedView: {
